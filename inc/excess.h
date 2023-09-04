@@ -155,10 +155,10 @@ int ray(vec* hit_pos, vec* hit_vec, const vec start_pos) // the look vector is a
 {
     // might need exclude conditions for obviously bogus rays to avoid those 2048 steps
     vec inc;
-    vMulS(&inc, look_dir, 0.0625f);
+    vMulS(&inc, look_dir, 0.015625f); // 0.0625f
     int hit = -1;
     vec rp = start_pos;
-    for(uint i = 0; i < 2048; i++)
+    for(uint i = 0; i < 8192; i++) // 2048
     {
         vAdd(&rp, rp, inc);
         if(isInBounds(rp) == 0){continue;} // break;
@@ -252,10 +252,12 @@ void loadColors(const char* file)
                 g.colors[7+lino] = val;
                 lino++;
                 if(lino > 31){break;}
-                // uchar r = (val & 0xFF0000) >> 16;
-                // uchar gc = (val & 0x00FF00) >> 8;
-                // uchar b = (val & 0x0000FF);
-                // printf("%u: %u %u %u\n", val, r,gc,b);
+            }
+            else if(sscanf(line, "%x", &val) == 1)
+            {
+                g.colors[7+lino] = val;
+                lino++;
+                if(lino > 31){break;}
             }
         }
         fclose(f);

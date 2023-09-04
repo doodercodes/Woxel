@@ -964,9 +964,13 @@ int main(int argc, char** argv)
 //*************************************
 // init stuff
 //*************************************
-    printf(">>> Woxel <<<\n");
-    printf("----\n");
-    printf("Mouse locks when you click on the game window, press ESCAPE/TAB to unlock the mouse.\n\n");
+    printf("██╗    ██╗ ██████╗ ██╗  ██╗███████╗██╗     \n");
+    printf("██║    ██║██╔═══██╗╚██╗██╔╝██╔════╝██║     \n");
+    printf("██║ █╗ ██║██║   ██║ ╚███╔╝ █████╗  ██║     \n");
+    printf("██║███╗██║██║   ██║ ██╔██╗ ██╔══╝  ██║     \n");
+    printf("╚███╔███╔╝╚██████╔╝██╔╝ ██╗███████╗███████╗\n");
+    printf(" ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝\n");
+    printf("\nMouse locks when you click on the game window, press ESCAPE/TAB to unlock the mouse.\n\n");
     printf("Input Mapping:\n");
     printf("W,A,S,D = Move around based on relative orientation to X and Y.\n");
     printf("SPACE + L-SHIFT = Move up and down relative Z.\n");
